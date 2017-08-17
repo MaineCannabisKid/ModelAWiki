@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Laravel Blog</a>
+          <a class="navbar-brand" href="/">Laravel Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,8 +42,10 @@
                   @endif
                   
                   {{-- User Links --}}
-                  <li><a href="#">User Test Link</a></li>
-                  <li role="separator" class="divider"></li>
+                  @if (Auth::guard('web')->check())
+                    <li><a href="#">User Test Link</a></li>
+                    <li role="separator" class="divider"></li>
+                  @endif
 
                   {{-- Logout and Form --}}
                   <li>

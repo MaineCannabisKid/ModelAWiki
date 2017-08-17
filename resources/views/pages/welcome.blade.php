@@ -25,8 +25,11 @@
                     <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
                     <a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary">Read More</a>
                 </div>
-
-                <hr>
+                
+                {{-- Check if NOT last loop --}}
+                @if(!$loop->last)
+                    <hr>
+                @endif
 
             @endforeach
 
